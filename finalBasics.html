@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Pawsome Crew</title>
+    <style>
+      .demo {
+        background: radial-gradient(
+          circle at 7.5% 24%,
+          rgb(237, 161, 193) 0%,
+          rgb(250, 178, 172) 25.5%,
+          rgb(190, 228, 210) 62.3%,
+          rgb(215, 248, 247) 93.8%
+        );
+        color: #000;
+        border-radius: 20px;
+        margin: 30px auto;
+        padding: 30px;
+        width: 50%;
+      }
+      h1,
+      h2,
+      p {
+        text-align: center;
+        font-family: monospace;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        padding-top: 20px;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+      }
+
+      li {
+        text-align: center;
+        font-family: monospace;
+        margin: 30px;
+      }
+      img {
+        border-radius: 100px;
+        margin: 0% auto;
+        max-height: 300px;
+      }
+      .item {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .pickButton {
+        background-color: #c7e6e0;
+        color: #333;
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        border-color: #55a7c0;
+        border-radius: 5%;
+        cursor: pointer;
+        font-family: monospace;
+      }
+      .pickButton:hover {
+        background-color: #eda1c1;
+        color: #fff;
+      }
+
+      span {
+        display: block;
+        margin-top: 25px;
+        text-align: center;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo">
+      <h1>My Pawsome Crew</h1>
+      <h2>Meet the family</h2>
+      <p>Hi! We are <em>Princess, Masato, Cru</em> and <em>Peto</em></p>
+      <hr />
+      <ul class="container">
+        <li class="item">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/085/507/original/IMG_20220924_123857310.jpg?1686677732"
+            alt="brown old doggie"
+          />
+          <p class="name"><strong>Cru</strong></p>
+        </li>
+        <li class="item">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/085/505/original/IMG_20220907_173309802.jpg?1686677721"
+            alt="brown doggie"
+          />
+          <p></p>
+          <p class="name"><strong>Masato</strong></p>
+        </li>
+        <li class="item">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/085/508/original/IMG_20221021_162512124_HDR.jpg?1686677739"
+            alt="White and coffee kitty"
+          />
+          <p class="name"><strong>Peto</strong></p>
+        </li>
+        <li class="item">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/085/504/original/P_20200424_120928.jpg?1686677712"
+            alt="White and black kitty"
+          />
+          <p class="name"><strong>Princess</strong></p>
+        </li>
+      </ul>
+      <button class="pickButton">pick your favorite</button>
+      <span class="footer">
+        <p>This page was built by</p>
+        <a href="https://github.com/lagonzalezdev" target="_blank"
+          >#lagonzalezdev
+        </a></span
+      >
+    </div>
+    <script>
+      function pick() {
+        let name = prompt("Woof is your name?");
+        let favorite = prompt(
+          "Miaw one is your favorite, " + name + "? 🐶🐱"
+        ).toLowerCase();
+        if (
+          favorite === "Peto" ||
+          favorite === "Princess" ||
+          favorite === "Masato" ||
+          favorite === "Cru"
+        ) {
+          alert("that one it's my favorite too 🤫");
+        } else {
+          alert(
+            "Sorry I hope you get the chance to get to know them better.😨"
+          );
+        }
+      }
+
+      let pickButton = document.querySelector(".pickButton");
+      pickButton.addEventListener("click", pick);
+    </script>
+  </body>
+</html>
